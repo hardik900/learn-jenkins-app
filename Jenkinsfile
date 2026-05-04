@@ -20,6 +20,12 @@ pipeline{
                 }
             }
 
+            stage('check docker') {
+                steps {
+                    sh 'docker version'
+                }
+            }
+
             stage('deploy'){
                 agent{
                     docker{
